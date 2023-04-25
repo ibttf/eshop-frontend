@@ -1,0 +1,65 @@
+.top-page {
+  justify-content: left;
+}
+.top-page-img {
+  padding-right: 10%;
+  width: 7vw;
+}
+.navbar-container{
+  margin-left: -10vw !important;
+}
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.nav-dropdown-container{
+  color:#165A9D;
+}
+.navbar-icon{
+  padding-left: 2vw;
+  color: #165A9D;
+  font-size: 1.2vw;
+}
+.navbar-icon:hover{
+  cursor: pointer;
+}
+.navbar-dropdown-text{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar-dropdown-link{
+  text-decoration: none;
+  color: black;
+}
+.navbar-dropdown-link:active{
+
+  color: black;
+}
+.navbar-btn {
+  border: none;
+  color: darkgray;
+  font-weight: bold;
+  font-size: 1vh;
+  font-family: sans-serif;
+  padding: 10px;
+  margin-right: 30px;
+  text-decoration: none;
+  transform: 500ms;
+}
+.navbar-btn:hover {
+  color: black;
+}
+.navbar-btn:focus {
+  color: black;
+}
+.active {
+  color: black;
+}
+
+
+@media only screen and (max-width: 989px) {
+  .navbar {
+    margin: 0;
+    padding: 5%;
+    border-radius: 0;
+
+  }
+}
