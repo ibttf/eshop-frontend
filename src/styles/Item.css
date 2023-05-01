@@ -1,0 +1,88 @@
+.item-container{
+
+}
+
+.item-hero-container{
+    display:flex;
+}
+
+.item-hero-image{
+    padding: 10% 10% 10% 20%;
+    width: 100%;
+}
+.item-hero-image img{
+    max-width: 20vw;
+    max-height: 25vw;
+}
+.item-hero-content{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+    padding: 13% 10% 0% 0%;
+    margin-left: 0%;
+}
+.item-hero-content h1{
+    color: #0d3a66;
+    font-size: 1.5vw;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+.item-hero-content h4{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 1%;
+}
+.item-hero-content h4 span{
+    padding:0 2%;
+    font-weight: normal;
+    color: gray;
+}
+.item-hero-content h5{
+    padding: 1% 0;
+    font-size: 0.8vw;
+    line-height: 1.1vw;
+    color: rgb(39, 39, 39);
+}
+
+.item-hero-content-buttons-container{
+    padding: 5% 1%;
+    display: flex;
+    width: 60%;
+}
+.item-hero-content-buttons-container button{
+    margin-right: 2%;
+    padding: 10px;
+    width: 100%;
+    font-size: 1vw;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    border: none;
+}
+.item-hero-content-buttons-container button:hover{
+    cursor:pointer;
+}
+.back-to-home{
+    background-color: rgb(181, 181, 181);
+
+    border: 1px solid black;
+    border-radius: 1px;
+}
+.add-to-cart{
+    background-color: #0d3a66 !important;
+
+}
+
+
+/* REVIEWS */
+.item-reviews-container-label {
+    padding: 0% 4%;
+    color: #165A9D;
+    font-weight:bold;
+}
+.item-reviews-container-label span{
+    text-decoration:underline;
+    text-decoration-color: #548bc1;
+    text-decoration-thickness: 0.5vw;
+    text-underline-offset: 1vw;
+}

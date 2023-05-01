@@ -1,5 +1,26 @@
 .home {
   padding: 0;
   display: flex;
-  overflow:hidden;
+  flex-direction: column;
+}
+.home h3{
+  padding: 5% 4%;
+  color: #165A9D;
+  font-weight:bold;
+}
+.new-products-container{
+  padding: 1% 0% 1% 4%;
+  display: flex;
+}
+.exclusive-products-container{
+  padding: 1% 0% 1% 4%;
+  display: flex;
+}
+.all-products-container{
+  padding: 1% 6% 1% 6%;
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(6, 1fr); 
+  grid-column-gap: 20px;
+  grid-row-gap: 20px; 
 }

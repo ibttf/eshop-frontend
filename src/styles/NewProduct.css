@@ -1,0 +1,53 @@
+.new-product-item{
+    border: 1px solid rgba(1,1,1,0.3);
+    box-shadow: 1px 5px 4px 2px rgba(1,1,1,0.2);
+    border-radius: 2px;
+    width: 100%;
+    margin-right: 5%;
+
+}
+
+.new-product-item img {
+    margin-left: 20%;
+    padding: 1% 5%;
+    max-width: 15vw;
+    min-width: 15vw;
+    min-height: 15vw;
+    max-height: 15vw;
+}
+
+.new-product-item h3{
+    text-transform: uppercase;
+    font-size: 1vw;
+    text-align: left;
+    font-family:Arial, Helvetica, sans-serif;
+    padding-left: 10% !important;
+}
+
+.new-product-item h4{
+    text-align: left;
+    padding: 0 10%;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5%;
+
+}
+
+.new-product-item button{
+    background-color: white;
+    border: 3px solid #165A9D;
+    border-radius: 5px;
+    text-align:left;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    background-color: #165A9D;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+
+}
+
+.new-product-item button:hover{
+    background-color: #1d74cc;
+    border: 3px solid #1d74cc;
+}

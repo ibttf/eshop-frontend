@@ -20,11 +20,12 @@ function SignUpForm({ onLogin }) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        username,
-        password,
-        password_confirmation: passwordConfirmation,
-    }),
+      body: JSON.stringify({user: {
+          "username": username,
+          "password": password,
+          password_confirmation: passwordConfirmation,
+
+      }}),
     })
       .then((r) => {
       setIsLoading(false);

@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { sliderData } from "./SliderData";
 import "../styles/Slider.scss";
 
 const Slider = () => {
+  const history=useHistory();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [displayProducts,setDisplayProducts]=useState([]);
   const slideLength = sliderData.length;
@@ -55,8 +57,7 @@ const Slider = () => {
                   <h2>{slide.title}</h2>
                   <p>{slide.description}</p>
                   <h3>${slide.price.toFixed(2)}</h3>
-                  <hr />
-                  <button className="--btn --btn-primary">Buy Now</button>
+                  <button className="--btn --btn-primary slider-button" onClick={()=>{history.push(`/products/${slide.id}`)}}>Buy Now</button>
                 </div>
               </div>
             )}

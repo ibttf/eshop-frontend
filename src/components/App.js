@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
+import Item from "../pages/Item";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/App.css";
 
@@ -11,11 +12,15 @@ function App() {
 
   useEffect(() => {
     // auto-login
-    fetch(`/logged-in`).then((r) => {
-      if (r.ok) {
-        r.json().then((user) =>setUser(user));
+    fetch(`/logged_in`).then((r) => {
+     r.json().then(results=>{
+      if(results.logged_in){
+        
+        setUser(results.user)
       }
-    })
+      })
+     })
+    
   }, []);
 
   return (
@@ -24,8 +29,20 @@ function App() {
         <Switch>
    
           <Route path="/login">
+            <NavBar user={user} setUser={setUser} isSignup={false}/>
+            <Login onLogin={setUser} />
+          </Route>
+          <Route path="/create-account">
+            <NavBar user={user} setUser={setUser} isSignup={true}/>
+            <Login onLogin={setUser} />
+          </Route>
+          <Route path="/cart">
             <NavBar user={user} setUser={setUser} />
             <Login onLogin={setUser} />
+          </Route>
+          <Route path="/products/:id">
+            <NavBar user={user} setUser={setUser} />
+            <Item />
           </Route>
 
           <Route path="/">

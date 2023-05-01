@@ -13,10 +13,6 @@ function Login({ onLogin }) {
 
   return (
     <div className="login">
-      <div className="login-left">
-        {/* <img src={background} className="hero-background"></img> */}
-      </div>
-      <div className="login-right">
 
 
         {showLogin ? (
@@ -51,7 +47,6 @@ function Login({ onLogin }) {
           </>
         )}
       </div>
-    </div>
   );
 }
 

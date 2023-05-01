@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Slider from "../components/Slider"
-
+import NewProduct from "../components/NewProduct";
+import ExclusiveProduct from "../components/ExclusiveProduct";
+import AllProduct from "../components/AllProduct";
 import "../styles/Home.css";
 const Home = ({ user }) => {
   const [products,setProducts]=useState([])
@@ -18,41 +20,39 @@ const Home = ({ user }) => {
 
 
   },[])
-
-  
-  if (user) {
-    //if logged in
-    return (
-      <div className="home">
-        {products.map((product)=>{
-          console.log(product);
-          return (
-            <div>
-              {product.title}
-            </div>
-          )
-        })}
-      </div>
-    );
-  }
-
   return (
-    //if not logged in
     <div className="home">
 
     <Slider />
-      <div className="home-slider-container">
-
-        {/* {products.slice(0,3).map((product)=>{
-          return (
-            <div>
-              {product.title}
-            </div>
-          )
-        })} */}
-      </div>
+    <h3>Brand New Products:-</h3>
+    <div className="new-products-container">
+      {products.slice(4,7).map((product)=>{
+        return(
+          <NewProduct product={product} key={product.id}>
+          </NewProduct>
+        )
+      })}
+    </div>
+    <h3>Exclusive Offer:-</h3>
+    <div className="exclusive-products-container">
+    {products.slice(17,19).map((product)=>{
+        return(
+          <ExclusiveProduct product={product} key={product.id}>
+          </ExclusiveProduct>
+        )
+      })}
+    </div>
+    <h3>All Products</h3>
+    <div className="all-products-container">
+    {products.map((product)=>{
+        return(
+          <AllProduct product={product} key={product.id}>
+          </AllProduct>
+        )
+      })}
+    </div>
   </div>
-    );
+  )
 };
 
 export default Home;

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "../styles/logo-no-background.png";
 import { useHistory } from "react-router-dom";
 import "../styles/LoginForm.css";
 
@@ -16,7 +15,10 @@ function LoginForm({ onLogin }) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({ username, password });
+    var raw = JSON.stringify({user: {
+      username,
+      password
+    }});
 
     var requestOptions = {
       method: 'POST',
@@ -27,14 +29,16 @@ function LoginForm({ onLogin }) {
     fetch(`/login`,requestOptions)
     .then((r) => {
       setIsLoading(false);
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
-        history.push("/");
-      } else {
-        r.json().then((err) => {
-          setErrors(err.errors);
-        });
-      }
+      r.json().then(results=>{
+        if (results.status===401){
+          //if login failed
+          setErrors(results.errors)
+        }else{
+          //successfully logged in
+          onLogin(results.user);
+          history.push("/")
+        }
+      })
     });
   }
 
