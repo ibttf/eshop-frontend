@@ -68,11 +68,21 @@
     border: 1px solid black;
     border-radius: 1px;
 }
+.back-to-home:hover{
+    background-color: rgb(135, 135, 135);
+}
 .add-to-cart{
     background-color: #0d3a66 !important;
 
 }
+.add-to-cart:hover{
+    background-color: #061e35 !important;
 
+}
+
+.add-to-cart-error{
+    padding-left: 2%;
+}
 
 /* REVIEWS */
 .item-reviews-container-label {
@@ -85,4 +95,25 @@
     text-decoration-color: #548bc1;
     text-decoration-thickness: 0.5vw;
     text-underline-offset: 1vw;
+}
+.add-review-container{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 4%;
+    margin: 2% 0%;
+}
+.add-review-container button{
+    border: 2px solid rgba(1,1,1,0.1);
+    box-shadow: 1px 5px 4px 2px rgba(1,1,1,0.2);
+    border-radius: 1vw;
+    padding: 0.5vw;
+    background-color:#165A9D;
+    color: white;
+    margin: 0 40%;
+    font-size: 1vw;
+    
+}
+.add-review-container button:hover{
+    background-color:#061e35;
 }

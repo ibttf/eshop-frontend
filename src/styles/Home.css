@@ -2,11 +2,24 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  overflow-x:hidden;
 }
 .home h3{
   padding: 5% 4%;
   color: #165A9D;
   font-weight:bold;
+}
+.home-container-label {
+  color: #165A9D;
+  font-weight:bold;
+  text-transform:uppercase;
+  font-size: 1.5vw;
+}
+.home-container-label span{
+  text-decoration:underline;
+  text-decoration-color: #55c3bd;
+  text-decoration-thickness: 0.3vw;
+  text-underline-offset: 0.7vw;
 }
 .new-products-container{
   padding: 1% 0% 1% 4%;

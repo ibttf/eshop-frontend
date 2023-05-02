@@ -24,7 +24,7 @@ const Home = ({ user }) => {
     <div className="home">
 
     <Slider />
-    <h3>Brand New Products:-</h3>
+    <h3 className="home-container-label"><span>BRAND NE</span>W PRODUCTS</h3>
     <div className="new-products-container">
       {products.slice(4,7).map((product)=>{
         return(
@@ -33,7 +33,7 @@ const Home = ({ user }) => {
         )
       })}
     </div>
-    <h3>Exclusive Offer:-</h3>
+    <h3 className="home-container-label"><span>EXCLUSIV</span>E OFFER</h3>
     <div className="exclusive-products-container">
     {products.slice(17,19).map((product)=>{
         return(
@@ -42,7 +42,7 @@ const Home = ({ user }) => {
         )
       })}
     </div>
-    <h3>All Products</h3>
+    <h3 className="home-container-label"><span>ALL PRO</span>DUCTS</h3>
     <div className="all-products-container">
     {products.map((product)=>{
         return(

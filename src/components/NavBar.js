@@ -5,14 +5,15 @@ import "../styles/Navbar.css";
 
 //bootstrap stuff
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 //fontawesome 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faCartShopping,
-    faUser
+    faUser,
+    faUserPlus,
+    faUserMinus
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -22,7 +23,9 @@ function NavBar({ user, setUser }) {
       if (r.ok) {
         setUser(null);
       }
-    })};
+    })
+    window.location.reload();
+    };
     function NavDropdownTitle(){
       {
         const navDropdownIcon=<FontAwesomeIcon icon={faUser} className="navbar-icon"></FontAwesomeIcon>
@@ -33,7 +36,8 @@ function NavBar({ user, setUser }) {
               <NavDropdown.Item className="navbar-dropdown-text">
                 <Link to="/" className="navbar-dropdown-link" onClick={()=>{
                   handleLogoutClick();
-                  }}>Signout</Link>
+                  
+                  }}><FontAwesomeIcon icon={faUserMinus} className="navbar-dropdown-icon"></FontAwesomeIcon>Signout</Link>
               </NavDropdown.Item>
 
             </NavDropdown>
@@ -44,13 +48,13 @@ function NavBar({ user, setUser }) {
           <NavDropdown title= {navDropdownIcon} id="basic-nav-dropdown" renderMenuOnMount={true} className="nav-dropdown-container">
 
               <NavDropdown.Item className="navbar-dropdown-text">
-                <Link to="/login" className="navbar-dropdown-link">Login</Link>
+                <Link to="/login" className="navbar-dropdown-link"><FontAwesomeIcon icon={faUser} className="navbar-dropdown-icon"></FontAwesomeIcon>Login</Link>
               </NavDropdown.Item>
 
 
             <NavDropdown.Divider />
             <NavDropdown.Item className="navbar-dropdown-text">
-              <Link to="/create-account" className="navbar-dropdown-link">Create Account</Link>
+              <Link to="/create-account" className="navbar-dropdown-link"><FontAwesomeIcon icon={faUserPlus} className="navbar-dropdown-icon"></FontAwesomeIcon>Create Account</Link>
             </NavDropdown.Item>
 
         </NavDropdown>

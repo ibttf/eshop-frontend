@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Item from "../pages/Item";
+import Cart from "../pages/Cart";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/App.css";
 
@@ -38,7 +39,7 @@ function App() {
           </Route>
           <Route path="/cart">
             <NavBar user={user} setUser={setUser} />
-            <Login onLogin={setUser} />
+            <Cart user={user} onLogin={setUser} />
           </Route>
           <Route path="/products/:id">
             <NavBar user={user} setUser={setUser} />

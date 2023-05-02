@@ -33,10 +33,13 @@
   padding: 15px;
   border: none;
   border-radius: 10px;
-  background-color: rgb(18, 26, 70);
+  background-color: #165A9D;
   font-family: sans-serif;
   font-size: 15px;
   color: white;
+}
+.login-form > form > button:hover{
+  background-color: #0b2f54;
 }
 .errors {
   color: red;
