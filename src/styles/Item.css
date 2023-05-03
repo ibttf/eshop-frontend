@@ -89,6 +89,14 @@
     padding: 0% 4%;
     color: #165A9D;
     font-weight:bold;
+    display: flex;
+    width: 40%;
+}
+.item-reviews-container-label div{
+    display: flex;
+    margin-left: 5%;
+    text-align: center;
+    align-items: center;
 }
 .item-reviews-container-label span{
     text-decoration:underline;
@@ -96,6 +104,74 @@
     text-decoration-thickness: 0.5vw;
     text-underline-offset: 1vw;
 }
+.item-star-rating-container{
+    margin-left: 20%;
+    background-color:#55c3bd !important;
+    color: white;
+    width: fit-content;
+    font-size: 1vw;
+    padding: 0.4vw 0.8vw;
+    border-radius: 10px;
+}
+/* REVIEW ITEM */
+.item-review{
+    padding: 1% 1% 1% 1%;
+    border: 2px solid rgba(1,1,1,0.1);
+    box-shadow: 1px 5px 4px 2px rgba(1,1,1,0.2);
+    border-radius: 0.3vw;
+    margin: 5% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.review-user-container{
+    display:flex;
+    align-items: center;
+}
+.review-user-container div{
+    margin: 0;
+    background-color: rgb(193, 93, 193);
+    color: white;
+    border-radius: 100%;
+    width:3vw;
+    height: 3vw;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.review-user-container div h1{
+    margin-top: .4vw;
+    font-size: 1.2vw;
+    text-transform: uppercase;
+}
+.review-user-container h2{
+    font-size: 1vw;
+    margin-left: 0.5vw;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.item-review h1{
+    font-size: 1.4vw;
+    margin-left: 1%;
+    min-width: 5vw;
+    max-width: 5vw;
+}
+.review-star{
+    color:gold;
+}
+.review{
+    margin-left: 4%;
+    color: gray;
+    font-size: 1vw;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ADD REVIEW */
 .add-review-container{
     display:flex;
     flex-direction: column;
@@ -116,4 +192,24 @@
 }
 .add-review-container button:hover{
     background-color:#061e35;
+}
+.add-review-container div{
+    text-align: center;
+    margin-top: 2%;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.grayed {
+    opacity: 0.3;
+}
+
+@media only screen and (max-width: 1100px) {
+    .item-reviews-container-label {
+        width: 60%;
+    }
+    .item-star-rating-container{
+
+        font-size: 15px;
+
+    }
 }

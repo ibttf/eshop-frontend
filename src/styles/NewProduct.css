@@ -6,7 +6,9 @@
     margin-right: 5%;
 
 }
-
+.new-product-item:hover{
+    border: 1px solid #1d74cc;
+}
 .new-product-item img {
     margin-left: 20%;
     padding: 1% 5%;
@@ -30,24 +32,20 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 5%;
+    font-size: 1vw;
 
 }
 
-.new-product-item button{
-    background-color: white;
-    border: 3px solid #165A9D;
-    border-radius: 5px;
-    text-align:left;
-    margin-bottom: 5%;
+.new-star-rating-container{
     margin-left: 10%;
-    background-color: #165A9D;
+    margin-bottom: 4%;
+    background-color:#55c3bd !important;
     color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-
+    width: fit-content;
+    font-size: 1vw !important;
+    padding: 0.4vw 0.8vw!important;
+    border-radius: 10px;
 }
-
-.new-product-item button:hover{
-    background-color: #1d74cc;
-    border: 3px solid #1d74cc;
+.new-star-rating-container span{
+    padding-left: 0.5vw;
 }

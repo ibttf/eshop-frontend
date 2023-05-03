@@ -43,7 +43,7 @@ function App() {
           </Route>
           <Route path="/products/:id">
             <NavBar user={user} setUser={setUser} />
-            <Item />
+            <Item user={user}/>
           </Route>
 
           <Route path="/">

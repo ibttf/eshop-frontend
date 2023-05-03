@@ -1,0 +1,111 @@
+.review-container{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    height: 80vh;
+    width: 50%;
+    border: 2px solid rgba(1,1,1,0.1);
+    box-shadow: 1px 5px 4px 2px rgba(1,1,1,0.2);
+    border-radius: 2vw;
+    text-align: left;
+    padding: 2% 0;
+    
+}
+.rating-container{
+    padding-left: 4%;
+}
+
+.write-review-container{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    text-align: left;
+    padding: 0 5%;
+}
+.write-review-content-container{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    padding: 0 5%;
+}
+.write-review-container label{
+    font-size: 1vw;
+    margin: 1% 0 2% 0;
+}
+.write-review-container textarea{
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-bottom: 4px solid #1d74cc;
+    padding: 2%;
+}
+.write-review-container textarea:focus{
+
+    background-color: white;
+    border: none;
+
+}
+.user-container{
+    display:flex;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+.user-container div{
+    margin: 0 0.8vw 0vw 0.8vw;
+    background-color: rgb(193, 93, 193);
+    color: white;
+    border-radius: 100%;
+    width:3vw;
+    height: 3vw;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.user-container div h1{
+    margin-top: .4vw;
+    font-size: 1.2vw;
+    text-transform: uppercase;
+}
+.user-container h2{
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.write-review-content-buttons-container{
+    margin-top: 3%;
+    display: flex;
+    width: 40%;
+}
+.write-review-content-buttons-container button{
+
+    border: 2px solid rgba(1,1,1,0.1);
+    margin-right: 5%;
+    font-size: 1vw;
+    padding: 3% 5%;
+    border-radius: .2vw;
+    width: 100%;
+
+} 
+.cancel-button{
+    background: #165A9D;
+    color: white;
+}
+.cancel-button:hover{
+    background: #0a2c4e;
+}
+.post-button{
+    background-color: white;
+
+}
+.post-button:hover{
+    background-color: rgb(192, 192, 192);
+
+}
+.add-review-error{
+    color: red;
+    margin-top: 2%;
+}

@@ -45,6 +45,7 @@ const Home = ({ user }) => {
     <h3 className="home-container-label"><span>ALL PRO</span>DUCTS</h3>
     <div className="all-products-container">
     {products.map((product)=>{
+      console.log(product.title)
         return(
           <AllProduct product={product} key={product.id}>
           </AllProduct>

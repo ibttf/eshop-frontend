@@ -19,11 +19,13 @@
 }
 .exclusive-product-item-content p{
     padding-left: 4%;
+    font-size: 0.8vw;
 
 }
 .exclusive-product-item-content h4{
     padding-left: 4%;
     font-weight: bold;
+    font-size: 25px;
 }
 .exclusive-product-item-content h4 span{
     padding-left: 2%;
@@ -54,3 +56,9 @@
     min-height: 25vw;
     padding: 10%;
 }
+
+@media only screen and (max-width: 1100px) {
+    .exclusive-product-item-content h4{
+        font-size: 15px;
+    }
+  }

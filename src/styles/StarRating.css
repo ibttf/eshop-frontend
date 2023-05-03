@@ -1,0 +1,14 @@
+
+.star-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+  }
+  .on {
+    color: gold;
+  }
+  .off {
+    color: #ccc;
+  }

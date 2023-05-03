@@ -177,3 +177,47 @@
     font-size: 0.8vw;
     color: red;
 }
+
+@media only screen and (max-width: 1100px) {
+    .cart{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .cart-price-content{
+
+        width: 100%;
+        
+    }
+    .cart-price-details {
+        grid-column-gap: 500px;
+    }
+    .strike-through{
+        height: 3px;
+        margin-bottom: 3%;
+    }
+
+    .cart-price-details-label{
+        color:rgb(84, 84, 84);
+        font-size: 20px;
+        padding-left: 25%;
+    }
+    .cart-price-details-number{
+        font-size: 20px;
+    }
+    .cart-price-final-details h5{
+        padding-left: 5%;
+        font-size: 20px;
+    }
+    .cart-price-final-details button{
+        border: none;
+        background-color:#165A9D;
+        color: white;
+        padding: 15px;
+        border-radius: .5vw;
+        font-size: 20px;
+        margin-top: 5%;
+        width: 100%;
+    }
+    
+  }

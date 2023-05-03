@@ -52,7 +52,6 @@ function NavBar({ user, setUser }) {
               </NavDropdown.Item>
 
 
-            <NavDropdown.Divider />
             <NavDropdown.Item className="navbar-dropdown-text">
               <Link to="/create-account" className="navbar-dropdown-link"><FontAwesomeIcon icon={faUserPlus} className="navbar-dropdown-icon"></FontAwesomeIcon>Create Account</Link>
             </NavDropdown.Item>
