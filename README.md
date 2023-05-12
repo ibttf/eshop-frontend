@@ -1,5 +1,5 @@
 # EShop
-An online web application to emulate an ecommerce platform using a React frontend, Ruby on Rails backend, a postgreSQL datbaase, and the fakestoreapi.
+An online web application to emulate an ecommerce platform using a React frontend, Ruby on Rails backend, a postgreSQL datbase, and the fakestoreapi.
 
 [![Video Walkthrough](https://www.youtube.com/watch?v=vokFeylkhL0&ab_channel=RoyLee](https://youtu.be/FgC_omMOSJc)
 ## Table of Contents
