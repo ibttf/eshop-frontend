@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import { useHistory } from 'react-router';
 import Loading from './Loading';
 import "../styles/Cart.css"
+import config from "../baseUrl.js"
 
 const Cart = (user ,setUser) => {
     //cart items only have quantity and ids of products

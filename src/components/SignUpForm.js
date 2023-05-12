@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import config from "../baseUrl.js"
 function SignUpForm({ onLogin }) {
   const history = useHistory();
   const [username, setUsername] = useState("");
@@ -15,7 +15,7 @@ function SignUpForm({ onLogin }) {
     setIsLoading(true);
 
 
-    fetch(`/signup`, {
+    fetch(`http://localhost:3000/signup`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
@@ -30,11 +30,12 @@ function SignUpForm({ onLogin }) {
       .then((r) => {
       setIsLoading(false);
       if (r.ok) {
+        console.log(r.json())
         r.json().then((user) => onLogin(user));
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
-    }).catch(err=>console.log(err, "hello"));
+    })
     history.push("/");
   }
 

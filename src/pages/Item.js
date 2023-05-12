@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import { useHistory } from 'react-router';
 import Loading from './Loading';
 import Review from '../components/Review';
+import config from "../baseUrl.js"
 import "../styles/Item.css"
 const Item = (user) => {
     const history=useHistory();
@@ -93,11 +94,11 @@ const Item = (user) => {
     )
         
     }
-    if (!user){
+    if (!user.user.username){
         //NOT logged in
         return (
             <>
-            <div className={`item-container ${isReview? "grayed" :""}`} onClick={()=>setIsReview(false)}>
+            <div className={`item-container`}>
                 <div className="item-hero-container">
                     <div className="item-hero-image">
                         <img src={item.image}></img>
@@ -123,7 +124,29 @@ const Item = (user) => {
                 <h1 className="item-reviews-container-label"><span>See Re</span>views</h1>
                 <div className="item-reviews-container">
                     <div className="add-review-container">
-                        <button onClick={(e)=>setCartErrors("Must be logged in to add a review.")}>Add a Review</button>
+                    <div className="item-review">
+                    {reviews.length>0 ? reviews.map((review)=>{
+
+                        return(
+                            <>
+                            <div className="review-user-container">
+                                <div>
+                                    <h1>{review.username.slice(0,1)}</h1>
+                                </div>
+        
+                                <h2>{review.username}</h2>
+                                <h1>{[...Array(review.rating)].map((star,index)=>{
+                                return(<span className="review-star">&#9733;</span>)
+                            }) }</h1>
+                            </div>
+
+                            <h2 className="review">{review.rev}</h2>
+
+                            </>
+                        )
+                    }) : <></>}
+                    </div>
+                        <button onClick={()=>setCartErrors("Must be logged in to add a review.")}>Add a Review</button>
                         {cartErrors ? (
                                 <div key={cartErrors} className="add-to-cart-error">{cartErrors}</div>
                             ) : (
@@ -138,7 +161,9 @@ const Item = (user) => {
     }
     //LOGGED IN
     return (
+
         <>
+
         <div className={`item-container ${isReview? "grayed" :""}`} onClick={()=>setIsReview(false)}>
             <div className="item-hero-container">
                 <div className="item-hero-image">
@@ -169,7 +194,7 @@ const Item = (user) => {
             <div className="item-reviews-container">
                 <div className="item-review">
                     {reviews.length>0 ? reviews.map((review)=>{
-                        
+
                         return(
                             <>
                             <div className="review-user-container">

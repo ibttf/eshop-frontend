@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "../styles/Review.css"
 import StarRating from './StarRating';
-
+import config from "../baseUrl.js"
 const Review = (props) => {
     const [rate,setRate]=useState(0);
     const [textReview,setTextReview]=useState("");

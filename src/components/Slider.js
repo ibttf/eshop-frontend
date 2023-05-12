@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { sliderData } from "./SliderData";
 import "../styles/Slider.scss";
+import config from "../baseUrl.js"
 
 const Slider = () => {
   const history=useHistory();
@@ -31,7 +32,7 @@ const Slider = () => {
   }, []);
 
   useEffect(() => {
-    fetch("/products").then(r=>r.json()).then((results)=>{
+    fetch(`/products`).then(r=>r.json()).then((results)=>{
         setDisplayProducts([...results.products.slice(1,4)]);
     })
     if (autoScroll) {

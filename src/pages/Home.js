@@ -5,6 +5,7 @@ import NewProduct from "../components/NewProduct";
 import ExclusiveProduct from "../components/ExclusiveProduct";
 import AllProduct from "../components/AllProduct";
 import "../styles/Home.css";
+import config from "../baseUrl.js"
 const Home = ({ user }) => {
   const [products,setProducts]=useState([])
 
@@ -13,7 +14,7 @@ const Home = ({ user }) => {
 
   useEffect(()=>{
     //set all the products on frontend equal to array of products seeded on backend
-    fetch("/products").then(r=>r.json()).then((results)=>{
+    fetch(`/products`).then(r=>r.json()).then((results)=>{
       setProducts([...results.products]);
 
     })
@@ -45,7 +46,6 @@ const Home = ({ user }) => {
     <h3 className="home-container-label"><span>ALL PRO</span>DUCTS</h3>
     <div className="all-products-container">
     {products.map((product)=>{
-      console.log(product.title)
         return(
           <AllProduct product={product} key={product.id}>
           </AllProduct>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../styles/logo-no-background.png";
 import "../styles/Navbar.css";
+import config from "../baseUrl.js"
 
 //bootstrap stuff
 import Container from 'react-bootstrap/Container';

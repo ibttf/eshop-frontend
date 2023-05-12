@@ -5,6 +5,8 @@ import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Item from "../pages/Item";
 import Cart from "../pages/Cart";
+import config from "../baseUrl.js"
+import Test from "./Test";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/App.css";
 
@@ -12,9 +14,11 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+
     // auto-login
     fetch(`/logged_in`).then((r) => {
      r.json().then(results=>{
+      console.log(results);
       if(results.logged_in){
         
         setUser(results.user)
@@ -45,7 +49,9 @@ function App() {
             <NavBar user={user} setUser={setUser} />
             <Item user={user}/>
           </Route>
-
+          <Route path="/test">
+            <Test />
+          </Route>
           <Route path="/">
             <NavBar user={user} />
             <Home user={user} />
