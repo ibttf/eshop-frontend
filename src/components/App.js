@@ -12,11 +12,11 @@ import "../styles/App.css";
 
 function App() {
   const [user, setUser] = useState(null);
-
+  const[toggle,setToggle]=useState(false);
   useEffect(() => {
 
     // auto-login
-    fetch(`/logged_in`).then((r) => {
+    fetch(`${config.baseUrl}/logged_in`, {mode: "cors"}).then((r) => {
      r.json().then(results=>{
       console.log(results);
       if(results.logged_in){
@@ -26,7 +26,7 @@ function App() {
       })
      })
     
-  }, []);
+  }, [,toggle]);
 
   return (
     <>
@@ -54,6 +54,7 @@ function App() {
           </Route>
           <Route path="/">
             <NavBar user={user} />
+            <button onClick={()=>setToggle(!toggle)}>toggle</button>
             <Home user={user} />
           </Route>
         </Switch>

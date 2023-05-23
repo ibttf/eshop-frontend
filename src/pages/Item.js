@@ -29,14 +29,17 @@ const Item = (user) => {
 
         newUrl=newUrl.join("");
 
-        fetch(`/products/${newUrl}`).then(r=>r.json())
+        fetch(`${config.baseUrl}/products/${newUrl}`
+        ).then(r=>r.json())
         .then(data=>{
             setItem({...data});
             //get the reviews for the item
-            fetch(`/get-reviews`, {
+            fetch(`${config.baseUrl}/get-reviews`, {
                 method: 'POST',
+                mode: "cors",
                 headers:{
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    'Access-Control-Allow-Origin' : '*',
                 },
                 body: JSON.stringify({
                     id: data.id,
@@ -61,10 +64,12 @@ const Item = (user) => {
     }, []);
 
     function handleAddToCartClick (){
-        fetch(`/add-to-cart`, {
+        fetch(`${config.baseUrl}/add-to-cart`, {
             method: 'POST',
+            mode: "cors",
             headers:{
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Access-Control-Allow-Origin' : '*',
             },
             body: JSON.stringify({
                 id: item.id
@@ -94,7 +99,7 @@ const Item = (user) => {
     )
         
     }
-    if (!user.user.username){
+    if (!user.username){
         //NOT logged in
         return (
             <>

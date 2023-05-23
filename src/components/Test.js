@@ -1,7 +1,8 @@
 import React from 'react';
+import config from '../baseUrl';
 const Test = () => {
     function handleLoggedInClick(){
-        fetch(`/logged_in`).then((r) => {
+        fetch(`${config.baseUrl}/logged_in`).then((r) => {
             r.json().then(results=>{
              console.log(results);
              })
@@ -9,18 +10,20 @@ const Test = () => {
     }
     function handleSignupClick(){
 
-        fetch(`/signup`, {
+        fetch(`${config.baseUrl}/signup`, {
             method: 'POST',
+            mode: "cors",
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify({user: {
-                "username": "newroy6",
-                "password": "newpass",
-                password_confirmation: "newpass",
-      
-            }}),
-          })
+            body: JSON.stringify(
+              {"user": 
+                {
+                  "username": "newroy2",
+                  "password": "newpass",
+                  "password_confirmation": "newpass",
+                 }}),
+          }).catch((error)=>console.log(error))
             .then((r) => {
             if (r.ok) {
               console.log(r.json(), "successfully created account and logged in apparently")
@@ -30,13 +33,14 @@ const Test = () => {
           })
     }
     function handleLoginClick(){
-        fetch(`/login`, {
+        fetch(`${config.baseUrl}/login`, {
             method: 'POST',
+            mode: "cors",
             headers: {
               "Content-Type": "application/json"
             },
             body: JSON.stringify({user: {
-                "username": "newroy6",
+                "username": "newroy2",
                 "password": "newpass"
       
             }}),
@@ -50,7 +54,10 @@ const Test = () => {
           })
     }
     function handleSignoutClick(){
-        fetch(`/logout`, { method: "DELETE"}).then((r) => {
+        fetch(`${config.baseUrl}/logout`, {
+          method: "DELETE",
+          mode: "cors"
+        }).then((r) => {
             if (r.ok) {
                console.log(r.json())
             }

@@ -32,7 +32,8 @@ const Slider = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`/products`).then(r=>r.json()).then((results)=>{
+    fetch(`${config.baseUrl}/products`, {mode: "cors"}
+    ).then(r=>r.json()).then((results)=>{
         setDisplayProducts([...results.products.slice(1,4)]);
     })
     if (autoScroll) {

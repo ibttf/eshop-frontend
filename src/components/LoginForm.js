@@ -15,7 +15,8 @@ function LoginForm({ onLogin }) {
     setIsLoading(true);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-
+    myHeaders.append('Access-Control-Allow-Origin', '*')
+      
     var raw = JSON.stringify({user: {
       username,
       password
@@ -23,11 +24,12 @@ function LoginForm({ onLogin }) {
 
     var requestOptions = {
       method: 'POST',
+      mode: "cors",
       headers: myHeaders,
       body: raw,
       redirect: 'follow'
     };
-    fetch(`/login`,requestOptions)
+    fetch(`${config.baseUrl}/login`,requestOptions)
     .then((r) => {
       setIsLoading(false);
       r.json().then(results=>{

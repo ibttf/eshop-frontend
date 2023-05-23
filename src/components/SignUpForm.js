@@ -15,8 +15,9 @@ function SignUpForm({ onLogin }) {
     setIsLoading(true);
 
 
-    fetch(`http://localhost:3000/signup`, {
+    fetch(`${config.baseUrl}/signup`, {
       method: 'POST',
+      mode: "cors",
       headers: {
         "Content-Type": "application/json"
       },

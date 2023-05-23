@@ -13,12 +13,14 @@ const Cart = (user ,setUser) => {
 
     useEffect(()=>{
         let cartItemArray=[];
-        fetch(`/cart-items`).then(r=>r.json()).then(items=>{
+        fetch(`${config.baseUrl}/cart-items`,{mode: "cors"}).then(r=>r.json()).then(items=>{
             
             items.forEach(item=>{
                 if (item.quantity > 0){
                     //for each cart item, get the product id and fetch that only if there's more than 1
-                    fetch(`https://fakestoreapi.com/products/${item.product_id}`).then(r=>r.json())
+                    fetch(`${config.baseUrl}https://fakestoreapi.com/products/${item.product_id}`, {
+                        mode: "cors"
+                    }).then(r=>r.json())
                     .then((product)=>{
                         //set our frontend  cart item to have everything that was in it before, as well as 
                         //the quantity and details of the product
@@ -49,10 +51,12 @@ const Cart = (user ,setUser) => {
 
     function handleChangeQuantityClick(quantity, itemId){
         //we want to reset the entire thing and reload the page as well
-        fetch(`/change-cart-quantity`, {
+        fetch(`${config.baseUrl}/change-cart-quantity`, {
             method: 'POST',
+            mode: "cors",
             headers:{
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Access-Control-Allow-Origin' : '*',
             },
             body: JSON.stringify({
                 id: itemId,

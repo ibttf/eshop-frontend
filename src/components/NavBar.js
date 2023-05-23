@@ -20,7 +20,8 @@ import {
 
 function NavBar({ user, setUser }) {
     function handleLogoutClick() {
-    fetch(`/logout`, { method: "DELETE"}).then((r) => {
+    fetch(`${config.baseUrl}/logout`, { method: "DELETE", mode: "cors"
+    }).then((r) => {
       if (r.ok) {
         setUser(null);
       }

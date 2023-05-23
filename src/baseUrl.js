@@ -1,3 +1,4 @@
-// const config={baseUrl: "https://shrouded-oasis-87140.herokuapp.com"}
-const config={baseUrl: "http://localhost:3000"}
+// const config={baseUrl: ""}
+const config={baseUrl: "https://cute-kitten-abe470.herokuapp.com"}
+
 export default config

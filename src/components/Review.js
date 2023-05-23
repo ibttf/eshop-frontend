@@ -7,10 +7,13 @@ const Review = (props) => {
     const [textReview,setTextReview]=useState("");
     const[errors,setErrors]=useState("");
     function handlePostClick (){
-        fetch(`/add-review`, {
+        fetch(`${config.baseUrl}/add-review`, {
             method: 'POST',
+            mode: "cors",
             headers:{
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Access-Control-Allow-Origin' : '*',
+
             },
             body: JSON.stringify({
                 id: props.item.id,

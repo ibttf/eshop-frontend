@@ -14,7 +14,9 @@ const Home = ({ user }) => {
 
   useEffect(()=>{
     //set all the products on frontend equal to array of products seeded on backend
-    fetch(`/products`).then(r=>r.json()).then((results)=>{
+    fetch(`${config.baseUrl}/products`,
+    {mode: "cors"}
+    ).then(r=>r.json()).then((results)=>{
       setProducts([...results.products]);
 
     })
