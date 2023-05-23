@@ -1,4 +1,4 @@
 // const config={baseUrl: ""}
-const config={baseUrl: "https://cute-kitten-abe470.herokuapp.com"}
+const config={baseUrl: "https://floating-journey-28678.herokuapp.com"}
 
 export default config
